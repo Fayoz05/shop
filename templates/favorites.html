@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+</head>
+<body>
+<div class="row">
+    <div class="row">
+        {% for product in liked_items %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image.url }}" width="200px" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.product_name }}</h5>
+                    <p class="card-text">{{ product.price }}</p>
+                    <a href="/product/{{ product.id}}" class="btn btn-primary">See more</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+</body>
+</html>
